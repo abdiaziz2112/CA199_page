@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    
+    
+    
+    <title>registration</title>
+  </head>
+  <body>
+    
+    
+    <div class="container  card rounded ">
+      
+      <p class="text-justify">Salaan kadib, fadlan formka hoosee soo buubuuxi adigoo mahadsan ,mararka qaar waxaa laga yaabaa in loo baahdo informationkagii sida magacagii idgaagii iyo wixii lamidka ah.</p>
+      <hr />
+      
+      <div class="alert alert-success d-none" id="successAlert" role="alert"></div>
+      
+      <div class="alert alert-danger d-none" id="dangerAlert" role="alert"></div>
+      
+       <h1 class="text-center mt-3"><span class="bg-secondary text-light">Register</span> now</h1>
+      
+      
+      <form name="google-sheet" id="form" class="w-75 mx-auto bg-light rounded">
+        <div id="form_alerts"></div>
+        
+        <div class="row mb-3">
+          <label for="id" class="col-sm-2 col-form-label" ><i class="fa fa-id-card-o  text-secondary"></i> Full_id</label>
+          <div class="col-sm-10">
+            <input type="text" onkeyup="checkId(idNo)" id="idNo" name="Std_Id" class="form-control" />
+            <small id="idMessage"></small>
+            
+          </div>
+          
+        </div>
+        <!--name-->
+        
+        <div class="row mb-3">
+          <label for="fullName" class="col-sm-2 col-form-label" ><i class="fa fa-user  text-dark"></i> Full_name</label>
+          <div class="col-sm-10">
+            <input type="text" id="fullName" name="Std_Name" class="form-control" />
+            
+          </div>
+          
+        </div>
+        
+        <div class="row mb-3">
+     <label for="number" class="col-sm-2 col-form-label" >  <I class="fa fa-phone text-success">  </i> Phone_number </label>
+          <div class="col-sm-10">
+           <input type="tel"  onkeyup="phonenumber(phone)"  id="phone" name="Std_Phone" class=" form-control " />
+            <small id="phoneMessage"></small>
+            
+          </div>
+          
+        </div>
+        
+        
+        <div class="row mb-3">
+          <label for="address" class="col-sm-2 col-form-label" ><i class="fa fa-map-marker text-danger"></i> Address</label>
+          <div class="col-sm-10">
+            <input type="text" id="address" name="Std_Address" class="form-control" />
+            
+          </div>
+          
+        </div>
+         <button type="submit" class="btn btn-primary w-100">Register</button>
+        <button type="reset" class="btn btn-danger w-100 mt-2">Reset the form!</button>
+      </form>
+    
+      
+      
+      
+    </div>
+    
+    
+    
+      <script>
+ const scriptURL = 'https://script.google.com/macros/s/AKfycbyC7VDGFFqOwzMrSLtLG_cHqKp1qAw7Li-ssdZcNMim1OdjDrQA7NFawSHakG0GAsd3FQ/exec'
+        const form = document.forms['google-sheet']
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => $("#form_alerts").html("<div class='alert alert-success'>Successfully registered !..</div>"))
+            .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Check the internet connection!!.</div>"))
+        })
+ 
+    </script>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="Script.js" type="text/javascript" charset="utf-8"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+ 
+ 
+  </body>
+</html>
